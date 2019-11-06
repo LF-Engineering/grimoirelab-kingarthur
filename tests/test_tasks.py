@@ -461,7 +461,7 @@ class TestSchedulingTaskConfig(unittest.TestCase):
 
         scheduling_cfg = SchedulingTaskConfig()
         self.assertEqual(scheduling_cfg.delay, WAIT_FOR_QUEUING)
-        self.assertEqual(scheduling_cfg.max_retries, MAX_JOB_RETRIES)
+        self.assertEqual(scheduling_cfg.max_retries, None)
         self.assertEqual(scheduling_cfg.max_age, None)
         self.assertEqual(scheduling_cfg.queue, None)
 

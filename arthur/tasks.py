@@ -425,8 +425,8 @@ class SchedulingTaskConfig(_TaskConfig):
 
     @max_retries.setter
     def max_retries(self, value):
-        if not isinstance(value, int):
-            raise ValueError("'max_retries' must be an int; %s given" % str(type(value)))
+        if value is not None and not isinstance(value, int):
+            raise ValueError("'max_retries' must be an int or None; %s given" % str(type(value)))
         self._max_retries = value
 
     @property

@@ -400,7 +400,7 @@ class FailedJobHandler:
             task.status = TaskStatus.FAILED
             logger.error("Job #%s (task: %s) unable to resume; cancelled",
                          job_id, task_id)
-        elif task.num_failures >= task_max_retries:
+        elif task_max_retries is not None and task.num_failures >= task_max_retries:
             task.status = TaskStatus.FAILED
             logger.error("Job #%s (task: %s) max retries reached; cancelled",
                          job_id, task_id)
